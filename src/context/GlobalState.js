@@ -14,6 +14,7 @@ const initialState = {
 export const GlobalContext = createContext(initialState);
 
 //Provider component
+//We need to use Dispatch whenever we call the Reducer action
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
 

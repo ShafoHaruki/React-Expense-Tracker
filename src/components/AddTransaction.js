@@ -4,11 +4,10 @@ import { GlobalContext } from "../context/GlobalState";
 const AddTransaction = () => {
   const [text, setText] = useState("");
   const [amount, setAmount] = useState(0);
-
   const { addTransaction } = useContext(GlobalContext);
 
   const onSubmit = (e) => {
-    e.preventdefault();
+    e.preventDefault();
     //"amount: +amount": is to allow the app to add the amount as a number, and not a string
     const newTransaction = {
       id: Math.floor(Math.random() * 100000000),
